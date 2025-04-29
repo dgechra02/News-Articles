@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* this make the background color tranparent > agr only ye use ho without backdrop-filter then header ke niche vala content clearly dikhta rhega without blur*/
+  backdrop-filter: blur(4px);
+  /* background me blur dalne ke liye */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  /* header mujhe hamesha sabse upper chahiye */
+}
+.right-header {
+  display: flex;
+  gap: 10px;
+}
+.branding {
+  font-size: 2rem;
+}
+.search-bar {
+  display: flex;
+  /* default property of align item is strech */
+  /* default property of juctify content is flex-start */
+  gap: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  /* border ke bahar jo content ja rha hai vo hide ho jayega */
+  /* transition: all 0.3s ease; */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.search-bar input[type="search"] {
+  padding: 0.5rem;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+.search-btn {
+  min-width: auto;
+  aspect-ratio: 1/1;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding-right: 5px;
+}
+.search-btn img {
+  aspect-ratio: 1/1;
+  height: 20px;
+  width: 20px;
+}
+.search-bar:hover {
+  /* outline: 2px solid aqua; */
+  box-shadow: 2px 2px 4px rgba(90, 103, 158, 0.8);
+  background-color: rgba(109, 109, 196, 0.4);
+}
+select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background-color: transparent;
+}
+select:hover {
+  box-shadow: 2px 2px 4px rgba(90, 103, 158, 0.8);
+  background-color: rgba(109, 109, 196, 0.4);
+}
+#news-articles {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 10px;
+}
+.news-article {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  gap: 5px;
+  background-color: white;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+  flex: 1;
+  position: relative;
+  /* gave this position becuase source will only stick to the parent which have postion other than static */
+}
+.source {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  z-index: 10;
+  background-color: rgb(115, 115, 115);
+  border-radius: 5px;
+  padding: 2px 4px;
+  font-size: 12px;
+  /* -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black; */
+}
+.news-article img {
+  width: 100%;
+  max-height: 10rem;
+  border-radius: 5px;
+  object-fit: cover;
+  /* as we do in background image, for a normal image i can be done with object-fit */
+}
+.title {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  /* overflow:hidden to work > i need to give width */
+  text-overflow: ellipsis;
+}
+.metadata {
+  display: flex;
+  align-items: stretch;
+  justify-content: start;
+  gap: 5px;
+}
+.author::after {
+  content: "";
+  border: 1px solid black;
+  margin-left: 5px;
+}
+.description {
+  max-width: 100%;
+  white-space: nowrap;
+  /* extra text that were wrapping, now it will not */
+  overflow: hidden;
+  /* the text that were going out now it hide */
+  text-overflow: ellipsis;
+  /* text that were overflowing now it will end with ellipsis, ellipsis is three donts */
+
+  /* --> all these above three properties will add an ellipsis*/
+}
+.websiteURL {
+  font-size: 13px;
+  text-decoration: none;
+  color: white;
+  background-color: green;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+
+@media (max-width: 525px) {
+  .right-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .search-bar input[type="search"]{
+    width: 87px;
+  }
+  #news-articles {
+    padding: 10px;
+    gap: 5px;
+  }
+  .news-article {
+    padding: 10px;
+    min-width: 250px;
+  }
+}

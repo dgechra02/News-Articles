@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://plus.unsplash.com/premium_photo-1707080369554-359143c6aa0b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bmV3cyUyMGZlZWR8ZW58MHx8MHx8fDA%3D">
+    <title>Article Hub</title>
+    <meta property="og:title" content="News Articles">
+    <meta property="og:description" content="This Application contains daily upadated articles of 7 different categories. You can search and see different articles of categories.">
+    <meta property="og:image" content="./assets/Snapshot.png">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="News Articles Hub">
+    <meta property="og:type" content="News">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <header>
+      <div class="branding">Articles</div>
+      <div class="right-header">
+
+        <div class="search-bar">
+          <input type="search" name="" id="search"/>
+          <button class="search-btn">
+            <img
+            width="50"
+            height="50"
+            src="https://img.icons8.com/ios/50/search--v1.png"
+            alt="search--v1"
+            />
+        </button>
+      </div>
+      <!-- <div class="filter">Filter <img src="./assets/arrow-drop-down-svgrepo-com.svg" alt=""></div> -->
+      <div id="filter-bar">
+        <select name="" id="category-filter"></select>
+      </div>
+    </div>
+    </header>
+    <main>
+      <section id="news-articles">
+        <template id="article-template">
+          <article class="news-article">
+            <span id="source" class="source"></span>
+            <img class="image" src="" alt="" />
+            <h3 class="title"></h3>
+            <div class="metadata">
+              <span class="author"></span>
+              <span class="date"></span>
+            </div>
+            <p class="description"></p>
+            <a class="websiteURL" href="" target="blank">Visit Website</a>
+          </article>
+        </template>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
